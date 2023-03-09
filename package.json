@@ -1,27 +1,17 @@
 {
   "name": "object-oriented-programming-team-profiler",
   "version": "1.0.0",
-  "description": "## Your Task",
+  "description": "A CLI app that generates team profile based on input from user",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
+  "scripts": { 
+    "start": "node index.js",
+    "test": "jest"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Carissella/Object-Oriented-Programming-Team-Profiler.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Carissella/Object-Oriented-Programming-Team-Profiler/issues"
-  },
-  "homepage": "https://github.com/Carissella/Object-Oriented-Programming-Team-Profiler#readme",
   "dependencies": {
     "inquirer": "^8.2.4",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7"
   }
 }
