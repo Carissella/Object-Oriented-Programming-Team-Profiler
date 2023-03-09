@@ -159,7 +159,7 @@ function startApp() {
     }
 
     function addIntern() {
-        inquirer.prompt({
+        inquirer.prompt([
             {
                 type: "input",
                 name: "internName",
@@ -206,7 +206,7 @@ function startApp() {
                     return true;
                 },
             },
-        })
+        ])
         .then((asnwers) => {
             const intern = new Intern(
                 answers.internName,
