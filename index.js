@@ -159,7 +159,7 @@ function startApp() {
     }
 
     function addIntern() {
-        inquirer.prompt({
+        inquirer.prompt([
             {
                 type: "input",
                 name: "internName",
@@ -206,8 +206,8 @@ function startApp() {
                     return true;
                 },
             },
-        })
-        .then((asnwers) => {
+        ])
+        .then((answers) => {
             const intern = new Intern(
                 answers.internName,
                 answers.internId,
@@ -218,11 +218,11 @@ function startApp() {
             addMoreEmployees();
         });
     }
-
+    
     function makeHTML() {
         console.log("Team has been generated!")
         fs.writeFileSync()
-    };
+    }
 
     addManager();
 };
