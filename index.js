@@ -1,9 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require ("fs"); 
-// fs = FileSystem
 const path = require("path");
-
-const generateTeams = require();
+const OUTPUT_DIR = path.resolve(__dirname, "dist");
+const outputPath = path.join(OUTPUT_DIR, "index.html");
+const generateTeam = require("./src/template.js");
 
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
@@ -53,7 +53,7 @@ function startApp() {
             },
             {
                 type: "input",
-                name: "managerOfficeNumber",
+                name: "OfficeNumber",
                 message: "Please enter the manager's office number",
                 validate: (answer) => {
                     if (answer === "") {
@@ -68,7 +68,7 @@ function startApp() {
                 answers.managerName,
                 answers.managerId,
                 answers.managerEmail,
-                answers.managerOfficeNumber
+                answers.OfficeNumber
             );
             teamsMembers.push(manager);
             addMoreEmployees();
@@ -139,14 +139,14 @@ function startApp() {
                 name: "engineerGithub",
                 message: "Please enter the engineer's Github username.",
                 validate: (answer) => {
-                    if(asnwer === "") {
+                    if(answer === "") {
                         return "Please enter a valid Github username for the engineer.";
                     }
                     return true;
                 },
             },
         ])
-        .then((asnwers) => {
+        .then((answers) => {
             const engineer = new Engineer(
                 answers.engineerName,
                 answers.engineerId,
@@ -207,7 +207,7 @@ function startApp() {
                 },
             },
         ])
-        .then((asnwers) => {
+        .then((answers) => {
             const intern = new Intern(
                 answers.internName,
                 answers.internId,
@@ -221,10 +221,11 @@ function startApp() {
 
     function makeHTML() {
         console.log("Team has been generated!")
-        fs.writeFileSync()
+        fs.writeFileSync(outputPath, generateTeam(teamsMembers), "utf-8")
     };
 
     addManager();
 };
+
 
 startApp();
