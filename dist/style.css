@@ -1,9 +1,11 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(222, 141, 230);
+    text-align: center;
 }
 
 .oop-nav {
+    text-align: center;
     background-color: rgb(119, 45, 248);
     color: rgb(249, 246, 250)
 }
@@ -18,8 +20,10 @@ body {
     color: rgb(201, 253, 116);
     min-height: 40px;
     max-height: 50px;
+    text-align: center;
 }
 
 .oop-title {
+    text-align: center;
     font-size: 30px !important;
 }
